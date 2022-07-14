@@ -6,8 +6,7 @@ import {getLobby, getLobbyDetails} from "./find_lobby";
 import {getMatch, getMatchDetails, loadStrings} from "./find_match";
 import {getSteamId} from "./steam_id";
 import {ensure} from "./utils/general";
-// @ts-ignore
-import opn from "opn";
+import open from "open";
 
 dotenv.config();
 
@@ -75,7 +74,7 @@ async function setActivity() {
     });
 }
 
-// opn("aoe2de://0/12345789");
+// open("aoe2de://0/12345789", {wait: true}).then();
 
 client.on("ready", async () => {
     await loadStrings();
